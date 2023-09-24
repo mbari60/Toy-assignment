@@ -1,6 +1,25 @@
 # Toy-assignment
 
+# My Toy-code Challenge assignment
 
+## Description
+This is a project that calculatesNetPay ,helps in Grading and helps to control Speed limit around
+
+## Setup Instructions
+To get started with this project, follow these steps:
+
+1. Clone the repository: `git clone git@github.com:mbari60/Toy-assignment.git`
+2. Navigate to the project directory: `cd mbari60/Toy-assignment`
+3. Get into the project : `code .`
+
+## Author
+- kevin mbari
+- Email: kevinmbari600@gmail.com
+
+## License
+
+ 
+## more information 
 
 In this assignment we are required to do 3 tasks 
 
