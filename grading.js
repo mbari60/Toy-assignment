@@ -20,6 +20,7 @@ function calculateGrade(marks) {
     return "enter valid marks between 0 to 100";
   }
 }
-
+//when argument are passed inside the function bellow for marks grade will be generated
+console.log(calculateGrade());
 
 

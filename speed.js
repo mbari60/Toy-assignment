@@ -22,3 +22,5 @@ function calculateDemeritPoints(speed) {
     }
   }
 }
+//when  the argument(speed) is passed in the function , demerit points are calculated if speed is above 70
+console.log(calculateDemeritPoints());

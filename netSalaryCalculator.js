@@ -80,5 +80,10 @@ function calculateNetPay(basicSalary, benefits) {
 
   netSalary = grosspay - (nhifDeduction + payee + nssf);
   //what will be returned is netSalary which equals the grosspay - alldeductions
+  //The console.log prints the salary after all deductions when arguments are passed on the calculateNetPay function
+  console.log(`your salary after all taxes are deducted equals ${netSalary}`);
   return netSalary;
 }
+
+//pass your arguments in the function for basic salary and benefits respectively to calculate the netpay
+console.log(calculateNetPay());

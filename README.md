@@ -1,5 +1,7 @@
 # Toy-assignment
 
+
+
 In this assignment we are required to do 3 tasks 
 
 # 1.Write a function that prompts the user to input student marks. The input should be between 0 and 100. The output should correspond the correct grade, as shown below: 
