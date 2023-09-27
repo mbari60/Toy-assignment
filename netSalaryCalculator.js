@@ -1,27 +1,15 @@
-//creating a function calculateNetPay
-
 function calculateNetPay(basicSalary, benefits) {
-  /**
-   * declaring variables grosspay which will store value of basicSalary + benefits
-   * declaring variables payee, nhifdeductions ,nssf and netsalary which will store values that are numbers since they have been initialized to a number 0
-   */
-
+  // Declaring  variables for calculations
   let grosspay = basicSalary + benefits;
   let payee = 0;
   let nhifDeduction = 0;
   let nssf = 0;
   let netSalary = 0;
 
-  //calculating nssf deductions
-
+  // Calculating  NSSF deductions which are (6% of grossPay)
   nssf = (6 / 100) * grosspay;
-  /**
-   * calculating nhifdeductions using the if ..else if statement
-   * we use the AND operator so as to tell our if that both statements have to be met so as to assign nhifdeduction the value
-   * like in the first condition we are telling our program that if range of grosspay is between 0 to 5999 then the nhifdeduction should be 150
-   *
-   */
 
+  // Calculating NHIF deductions  using the ranges we were given
   if (grosspay >= 0 && grosspay <= 5999) {
     nhifDeduction = 150;
   } else if (grosspay >= 6000 && grosspay <= 7999) {
@@ -58,12 +46,7 @@ function calculateNetPay(basicSalary, benefits) {
     nhifDeduction = 1700;
   }
 
-  /**
-   * calculating the monthly payeee between the given values
-   * we are using the AND operator to tell our program that both conditions have to be met so as to provide the specified outcome.
-   *  like in the first condition we are telling our program that if range of grosspay is between 0 to 24000 then the payee should be 10% of the grosspay
-   */
-
+  // Calculating  PAYEE (Pay As You Earn)  using the ranges we were given
   if (grosspay >= 0 && grosspay <= 24000) {
     payee = (10 / 100) * grosspay;
   } else if (grosspay >= 24001 && grosspay <= 32333) {
@@ -75,15 +58,24 @@ function calculateNetPay(basicSalary, benefits) {
   } else if (grosspay > 800000) {
     payee = (35 / 100) * grosspay;
   }
-
-  //we are telling our function that netsalary should be returned but netsalary but the netsalary is less all the deductions meaning that it is grosspay - all deductions
-
+  // Calculating  netSalary by subtracting all deductions from grosspay
   netSalary = grosspay - (nhifDeduction + payee + nssf);
-  //what will be returned is netSalary which equals the grosspay - alldeductions
-  //The console.log prints the salary after all deductions when arguments are passed on the calculateNetPay function
-  console.log(`your salary after all taxes are deducted equals ${netSalary}`);
+
+  // Return the netSalary
   return netSalary;
 }
 
-//pass your arguments in the function for basic salary and benefits respectively to calculate the netpay
-console.log(calculateNetPay());
+// Prompt the user to enter basicSalary and benefits
+const basicSalaryInput = parseFloat(prompt("Enter your basic salary:"));
+const benefitsInput = parseFloat(prompt("Enter your benefits:"));
+
+// Check if the inputs are valid numbers
+if (!isNaN(basicSalaryInput) && !isNaN(benefitsInput)) {
+  // Call the function with user-provided values
+  const userNetPay = calculateNetPay(basicSalaryInput, benefitsInput);
+  // Display the result to the user
+  alert(`Your net salary after all deductions is ${userNetPay}`);
+} else {
+  // Display an error message if the inputs are not valid numbers
+  alert("Please enter valid numeric values for basic salary and benefits.");
+}
